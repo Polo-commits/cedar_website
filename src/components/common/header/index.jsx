@@ -16,9 +16,9 @@ export default function () {
         <header className="">
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
-                    <a className="navbar-brand" href="index.html">
-                        <img src={Logo} alt="" className="logo-image" />
-                    </a>
+                <Link className="navbar-brand" to="/">
+    <img src={Logo} alt="Cedar Logo" className="logo-image" />
+</Link>
                     <button
                         className="navbar-toggler"
                         type="button"
