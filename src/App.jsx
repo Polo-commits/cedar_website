@@ -1,10 +1,11 @@
-import Gallery from './screens/Gallery';
 import {Routes, Route} from "react-router-dom";
-import Home from "./screens/home/index.jsx";
-import About from "./screens/about/index.jsx";
-import Services from "./screens/services/index.jsx";
-import Contact from "./screens/contact/index.jsx";
-import HsePolicy from "./screens/hse-policy/index.jsx";
+import Gallery from './pages/Gallery';
+import Home from "./pages/home/index.jsx";
+import About from "./pages/about/index.jsx";
+import Services from "./pages/services/index.jsx";
+import Contact from "./pages/contact/index.jsx";
+import HsePolicy from "./pages/hse-policy/index.jsx";
+
 
 function App() {
   return (
