@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { client } from "../../sanityClient"; // adjust path if needed
+import sanityClient from "../../sanity/sanityClient";
 
 import Banner from "../../components/home/banner.jsx";
 import RequestForm from "../../components/home/requestForm.jsx";
