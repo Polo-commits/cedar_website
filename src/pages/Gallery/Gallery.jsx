@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import sanityClient from '../sanityClient';
+import sanityClient from "../../sanityClient";
 
 export default function Gallery() {
   const [galleryItems, setGalleryItems] = useState([]);
