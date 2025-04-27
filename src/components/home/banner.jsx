@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import sanityClient from "../../sanityClient";
+import sanityClient from "../../sanity/sanityClient";
 
 export default function Banner() {
   const [data, setData] = useState(null);
