@@ -1,9 +1,9 @@
 import {Routes, Route} from "react-router-dom";
-import Gallery from './pages/Gallery';
 import Home from "./pages/home/index.jsx";
 import About from "./pages/about/index.jsx";
 import Services from "./pages/services/index.jsx";
 import Contact from "./pages/contact/index.jsx";
+import Gallery from './pages/Gallery';
 import HsePolicy from "./pages/hse-policy/index.jsx";
 
 
