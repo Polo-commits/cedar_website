@@ -9,6 +9,7 @@ export default function () {
         "/about": "About Us",
         "/hse-policies": "HSE Policies",
         "/services": "Our Services",
+        "/gallery": "Gallery",
         "/contact": "Contact Us",
     }
 

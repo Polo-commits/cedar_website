@@ -1,4 +1,4 @@
-
+import Gallery from './screens/Gallery';
 import {Routes, Route} from "react-router-dom";
 import Home from "./screens/home/index.jsx";
 import About from "./screens/about/index.jsx";
@@ -14,6 +14,7 @@ function App() {
         <Route path="/hse-policies" element={<HsePolicy />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
   )
 }
