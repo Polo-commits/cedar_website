@@ -1,26 +1,30 @@
 // src/pages/gallery/index.jsx
 
 import React, { useState, useEffect } from 'react';
-import Lightbox from 'yet-another-react-lightbox';
-import 'yet-another-react-lightbox/styles.css';
 import { client } from '../../sanityClient';
 import PageLayout from '../../components/common/pageLayout/index.jsx';
-import './gallery.css';  // your existing grid styles
+import './gallery.css';
 
 export default function GalleryPage() {
   const [images, setImages] = useState([]);
-  const [open, setOpen] = useState(false);
-  const [startIndex, setStartIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     client
       .fetch(`*[_type == "gallery"][0].images[]{asset->{url}}`)
-      .then(data => {
-        // data is [{asset:{url}}, …]
-        setImages(data.map(item => item.asset.url));
-      })
+      .then(data => setImages(data.map(item => item.asset.url)))
       .catch(console.error);
   }, []);
+
+  const openLightbox = idx => {
+    setCurrentIndex(idx);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => setLightboxOpen(false);
+  const prevImage = () => setCurrentIndex((currentIndex + images.length - 1) % images.length);
+  const nextImage = () => setCurrentIndex((currentIndex + 1) % images.length);
 
   return (
     <PageLayout>
@@ -30,25 +34,21 @@ export default function GalleryPage() {
 
       <div className="gallery-grid">
         {images.map((src, idx) => (
-          <div
-            key={idx}
-            className="gallery-item"
-            onClick={() => {
-              setStartIndex(idx);
-              setOpen(true);
-            }}
-          >
+          <div key={idx} className="gallery-item" onClick={() => openLightbox(idx)}>
             <img src={src} alt={`Gallery ${idx + 1}`} loading="lazy" />
           </div>
         ))}
       </div>
 
-      <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        slides={images.map((src) => ({ src }))}
-        index={startIndex}
-      />
+      {lightboxOpen && (
+        <div className="lightbox-overlay">
+          <button className="lightbox-close" onClick={closeLightbox}>&times;</button>
+          <button className="lightbox-prev" onClick={prevImage}>&lsaquo;</button>
+          <img src={images[currentIndex]} alt="" className="lightbox-img" />
+          <button className="lightbox-next" onClick={nextImage}>&rsaquo;</button>
+        </div>
+      )}
     </PageLayout>
   );
 }
+
