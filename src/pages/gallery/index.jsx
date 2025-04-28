@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import sanityClient from "../../sanity/sanityClient";
+import { client } from '../../sanityClient';
 
 export default function Gallery() {
   const [galleryItems, setGalleryItems] = useState([]);
 
   useEffect(() => {
-    sanityClient.fetch(
+    client.fetch(
       `*[_type == "gallery"]{
         _id,
         title,

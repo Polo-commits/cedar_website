@@ -1,7 +1,10 @@
-import sanityClient from '@sanity/client';
+// src/sanityClient.jsx
 
-export default sanityClient({
-  projectId: 'cilh7kpx', // your real project ID
-  dataset: 'production',
-  useCdn: true
+import { createClient } from '@sanity/client';
+
+export const client = createClient({
+  projectId: 'cilh7kpx',    // YOUR project ID
+  dataset: 'production',    // your dataset
+  apiVersion: '2023-01-01', // NEW API version
+  useCdn: true,
 });

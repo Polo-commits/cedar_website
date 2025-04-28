@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import sanityClient from "../../sanity/sanityClient";
+import { client } from '../../sanityClient';
 
 import Banner from "../../components/home/banner.jsx";
 import RequestForm from "../../components/home/requestForm.jsx";
@@ -39,7 +39,6 @@ export default function HomePage() {
       <CallbackForm />
       <Testimonials />
       <RequestForm />
-      {/* <Partners /> */}
     </PageLayout>
   );
 }
