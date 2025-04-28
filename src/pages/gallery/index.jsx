@@ -1,6 +1,6 @@
 // src/pages/gallery/index.js
 
-import { client } from '@/sanityClient';
+import { client } from '../../sanityClient';
 import Image from 'next/image';
 
 export async function getStaticProps() {
