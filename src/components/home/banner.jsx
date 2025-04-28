@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import sanityClient from "../../sanity/sanityClient";
+import { client } from "../../sanityClient";  // <-- Corrected
 
 export default function Banner() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    sanityClient
+    client
       .fetch(`*[_type == "homepage"][0]{
         title,
         subtitle,
@@ -53,7 +53,7 @@ export default function Banner() {
             <div className="text-content">
               <h6>{data.subtitle}</h6>
               <h4>{data.title}</h4>
-              <p>{/* if you have a description field, insert it here */}</p>
+              <p>{/* Description field if needed */}</p>
               <Link to="/services" className="filled-button">
                 {data.buttonText}
               </Link>
