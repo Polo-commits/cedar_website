@@ -1,32 +1,46 @@
-// src/pages/gallery/index.js
+// src/pages/gallery/index.jsx
 
+import { useEffect, useState } from 'react';
 import { client } from '../../sanityClient';
-import Image from 'next/image';
 
-export async function getStaticProps() {
-  const galleryData = await client.fetch(`*[_type == "gallery"][0].images[]{asset->{url}}`);
-  
-  return {
-    props: {
-      galleryImages: galleryData || [],
-    },
-    revalidate: 60, // Revalidate every 60 seconds (optional)
-  };
-}
+export default function Gallery() {
+  const [galleryItems, setGalleryItems] = useState([]);
 
-export default function Gallery({ galleryImages }) {
+  useEffect(() => {
+    client.fetch(
+      `*[_type == "gallery"][0].images[]{asset->{url}}`
+    )
+    .then((data) => setGalleryItems(data || []))
+    .catch(console.error);
+  }, []);
+
   return (
     <div style={{ padding: '2rem' }}>
       <h1>Cedar Inspection Gallery</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
-        {galleryImages.map((img, index) => (
-          <div key={index} style={{ position: 'relative', width: '100%', paddingBottom: '100%' }}>
-            <Image
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '1rem',
+        }}
+      >
+        {galleryItems.map((img, idx) => (
+          <div
+            key={idx}
+            style={{
+              overflow: 'hidden',
+              borderRadius: '10px',
+            }}
+          >
+            <img
               src={img.asset.url}
-              alt={`Gallery Image ${index + 1}`}
-              layout="fill"
-              objectFit="cover"
-              quality={80}
+              alt={`Gallery Image ${idx + 1}`}
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'cover',
+                display: 'block',
+              }}
             />
           </div>
         ))}
