@@ -75,20 +75,6 @@ export default function Services () {
                         </div>
                         <div className="col-md-8 services-content">
                             <section className="tabs-content">
-                                <article id="tabs-1" className="mb-5">
-                                    <img src={ServiceImageFour} alt=""/>
-                                    <h4>Integrity Management</h4>
-                                    <p>
-                                        Clients are seeking benefits that can be provided by modernising
-                                        and transforming integrity management, improved efficiencies,
-                                        improved safety, reduced risks and costs. Our Integrity and inspection
-                                        experts provide ground-breaking integrity management services to achieve these
-                                        through inspection tool, providing you with fuller, more reliable understanding
-                                        of your assets so you can respond faster, more intuitively and which reduced
-                                        operating costs. We deliver game-changing services to keep your assets running
-                                        safely and productively.
-                                    </p>
-                                </article>
                                 <article id="tabs-2" className="mb-5">
                                     <img src={ServiceImageOne} alt=""/>
                                     <h4>Advanced NDT</h4>
