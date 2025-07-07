@@ -106,8 +106,8 @@ export default function () {
                                 <li>
                                     <span>Location:</span><br/>
                                     <a>
-                                        Tema Community 1, Greater Accra<br/>
-                                        Ghana, West Africa</a>
+                                    Tema Community 12, opposite Wistand International School, Greater Accra, Ghana, West Africa
+                                    </a>
                                 </li>
                                 <li>
                                     <span>Mobile Numbers:</span><br />
