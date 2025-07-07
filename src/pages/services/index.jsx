@@ -122,17 +122,69 @@ export default function Services () {
                                     <img src={ServiceImageThree} alt=""/>
                                     <h4>Lifting Inspection</h4>
                                     <p>
-                                        Any lifting and hand equipment should be checked
-                                        when installed and periodically thereafter. If
-                                        this regular check is not done, they can be source
-                                        of accident at work. CIV team lead the following inspections in accordance
-                                        with internation regulations.
+                                    Any lifting and hand equipment should be checked when installed and periodically thereafter. If this regular check is not done, they can be a source of accidents at work. CIV Limited team lead the following inspection or examination in accordance with international standards and regulations like BS, EN, LOLER, PUWER, ASME and any client-specific safe system of work and requirements.
                                         <ol>
                                             <li>Overhead cranes inspection</li>
                                             <li>Forklifts inspection</li>
                                             <li>Lifting Chains, hooks inspection</li>
                                         </ol>
                                     </p>
+                                    <article id="tabs-X" className="mb-5">
+  <h4>Supplies of Lifting Accessories</h4>
+  <p>
+    At CIV Limited, we specialize in supplying high-quality lifting Accessories to meet the needs of various industries. Our range of products includes:
+  </p>
+  <ul>
+    <li>Slings: Wire rope slings, Chain slings and synthetic slings.</li>
+    <li>Shackles: High-Strength shackles for secure lifting and rigging applications.</li>
+    <li>Hooks: Durable hooks for lifting and rigging, designed for heavy-duty use.</li>
+    <li>Lifting Beam: Customizable lifting Beams for specific lifting requirements.</li>
+    <li>Other Lifting Accessories: Clamps, Spreader bars and more.</li>
+  </ul>
+</article>
+<article id="tabs-4" className="mb-5">
+    <img src={ServiceImageFour} alt="Calibration Services" />
+    <h4>Calibration</h4>
+    <p>
+      At CIV Limited, we provide accurate and reliable calibration services to ensure your measuring instruments are performing at their maximum best. Our expert technicians use state-of-the-art equipment to calibrate a wide range of instruments, ensuring compliance with industry standards. Our calibration services include instruments calibration, workshop calibration and customized calibration.
+    </p>
+  </article>
+  <article id="tabs-5" className="mb-5">
+    <img src={ServiceImageFive} alt="Valve & Pressure Gauge Inspection and Installation" />
+    <h4>Valve & Pressure Gauge Inspection and Installation</h4>
+    <p>
+      Cedar Inspection Ventures (CIV) Limited provides comprehensive valve and pressure gauge inspection and installation services to ensure the safety, efficiency and reliability of your system. Our experienced technicians use advanced equipment and techniques to inspect and install valves and pressure gauges, ensuring optimal performance and compliance with industry standards. Our inspection team provides the following range of services:
+    </p>
+    <ul>
+      <li>Thorough inspection or examination of valves to detect leaks, corrosion and other potential issues</li>
+      <li>Calibration and inspection of pressure gauges to ensure accurate readings</li>
+    </ul>
+  </article>
+  <article id="tabs-6" className="mb-5">
+    <img src={ServiceImageSix} alt="Pipeline Inspection" />
+    <h4>Pipeline Inspection</h4>
+    <p>
+      At CIV Limited, we specialize in providing comprehensive pipeline inspection services in accordance with API standards and other relevant standards to ensure the integrity and safety of your pipeline infrastructure. Our team of experienced professionals utilizes advanced technologies and techniques to detect potential issues before they become major problems. Our pipeline inspection services include visual inspection, pipeline integrity assessment, non-destructive testing (NDT) and leak detection.
+    </p>
+  </article>
+  <article id="tabs-7" className="mb-5">
+    <img src={ServiceImageSeven} alt="Marine Protective Coating" />
+    <h4>Marine Protective Coating</h4>
+    <p>
+      At CIV Limited, we specialize in delivering high-quality marine protective coatings to shield your vessels, structures, and equipment from the harsh marine environment. Our experienced team ensures durable, corrosion-resistant, and low-maintenance coatings that meet your specific needs.
+    </p>
+  </article>
+  <article id="tabs-8" className="mb-5">
+    <img src={ServiceImageEight} alt="Manpower Supply" />
+    <h4>Manpower Supply</h4>
+    <p>
+      We provide skilled and reliable manpower to meet the needs of various industries. Our manpower supply services include:
+    </p>
+    <ul>
+      <li>Skilled Labour: Experienced professionals for technical and specialized roles</li>
+      <li>Unskilled Labour: Reliable workforce for general labour and support tasks</li>
+    </ul>
+  </article>
                                 </article>
                                 <article id="tabs-5">
                                     <img src={ServiceImageTwo} alt=""/>
@@ -149,10 +201,19 @@ export default function Services () {
                                 </article>
                                 <article id="tabs-6">
                                     <img src={ServiceImageThree} alt=""/>
-                                    <h4>Factory Inspection</h4>
+                                    <h4>Statutory Inspection</h4>
                                     <p>
-                                        Through assessments of factory premises to ensure compliance with safety and regulatory standards.
+                                    CIV Limited provides statutory inspection or examination on industrial Machinery or equipment to ensure compliance with regulatory requirements. Our experienced engineers conduct thorough examinations to identify potential issues that will prevent accidents. Our statutory inspection services include:
                                     </p>
+                                    <p>
+  CIV Limited provides statutory inspection or examination on industrial Machinery or equipment to ensure compliance with regulatory requirements. Our experienced engineers conduct thorough examinations to identify potential issues that will prevent accidents. Our statutory inspection services include:
+</p>
+<ul>
+  <li>Pressure Vessel examination/Inspection</li>
+  <li>Lifting Equipment examination/Inspection</li>
+  <li>Piping and Tank Inspection</li>
+  <li>Boiler Inspection/Examination and others</li>
+</ul>
                                 </article>
                             </section>
                         </div>
