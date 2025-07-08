@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getServices } from '../../lib/sanityClient'
+import { getServices } from '../../sanityClient'
 import { PortableText } from '@portabletext/react'
 import PageLayout from "../../components/common/pageLayout/index.jsx"
 import CallbackForm from "../../components/home/callbackForm.jsx"
