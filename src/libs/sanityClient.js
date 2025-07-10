@@ -33,3 +33,18 @@ export async function getServices() {
   }`
   return await client.fetch(query);
 }
+
+export async function getAbout() {
+  return await client.fetch(`*[_type == "aboutPage"][0]{
+    title,
+    subtitle,
+    mainImage { asset->{url} },
+    content,
+    teamMembers[] {
+      name,
+      position,
+      bio,
+      photo { asset->{url} }
+    }
+  }`)
+}
