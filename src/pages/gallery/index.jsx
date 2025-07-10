@@ -1,7 +1,7 @@
 // src/pages/gallery/index.jsx
 
 import React, { useState, useEffect } from 'react';
-import { client } from '../../sanityClient';
+import { client } from '../../libs/sanityClient';
 import PageLayout from '../../components/common/pageLayout/index.jsx';
 import './gallery.css';
 

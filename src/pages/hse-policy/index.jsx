@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import PageLayout from "../../components/common/pageLayout/index.jsx";
-import { getHSEPolicies } from "../../sanityClient";
+import { getHSEPolicies } from "../../libs/sanityClient";
 import { PortableText } from "@portabletext/react";
 
 export default function HSEPolicies() {

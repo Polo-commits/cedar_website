@@ -1,5 +1,3 @@
-// src/sanityClient.js
-
 import { createClient } from '@sanity/client';
 
 export const client = createClient({
@@ -9,7 +7,7 @@ export const client = createClient({
   useCdn: true,
 });
 
-// Fetch HSE Policies — EXPANDED
+// Fetch HSE Policies
 export async function getHSEPolicies() {
   const query = `*[_type == "hsePolicies"][0]{
     title,
@@ -22,6 +20,16 @@ export async function getHSEPolicies() {
         url
       }
     }
+  }`
+  return await client.fetch(query);
+}
+
+// ✅ Add this:
+export async function getServices() {
+  const query = `*[_type == "service"]{
+    title,
+    description,
+    body
   }`
   return await client.fetch(query);
 }
