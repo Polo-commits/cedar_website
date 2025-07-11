@@ -5,6 +5,8 @@ import post from './post'
 import homepage from './homepage'
 import hsePolicies from './hsePolicies'
 import service from './service'
+import about from './about.js'
+import contact from './contact.js'
 
 export const schemaTypes = [
   post,
@@ -13,5 +15,7 @@ export const schemaTypes = [
   blockContent,
   homepage,
   hsePolicies,
-  service
+  service,
+  about,
+  contact
 ]

@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { getAbout } from "../../libs/sanityClient";
+import PageLayout from "../../components/common/pageLayout/index.jsx";
+import { PortableText } from "@portabletext/react";
+import { getAbout, client } from "../../libs/sanityClient.js";
+import imageUrlBuilder from "@sanity/image-url";
 
 export default function About() {
   const [aboutData, setAboutData] = useState(null);
@@ -8,18 +11,36 @@ export default function About() {
     getAbout().then(setAboutData);
   }, []);
 
+  const builder = imageUrlBuilder(client);
+  function urlFor(source) {
+    return builder.image(source);
+  }
+
   if (!aboutData) return <div>Loading...</div>;
 
   return (
     <PageLayout>
-      <div>{aboutData.title}</div>
-      <div dangerouslySetInnerHTML={{ __html: aboutData.content }}></div>
-      {aboutData.teamMembers.map(member => (
-        <div key={member.name}>
-          <h4>{member.name}</h4>
-          <p>{member.bio}</p>
-        </div>
-      ))}
+      <div className="container">
+        <h1>{aboutData.title}</h1>
+        <span>{aboutData.subtitle}</span>
+
+        <h2>
+          Get to know about <em>{aboutData.heading}</em>
+        </h2>
+
+        <PortableText value={aboutData.body} />
+
+        <img src={urlFor(aboutData.image)} alt="About Banner" />
+
+        <h3>Our Leading Members</h3>
+        {aboutData.teamMembers?.map((m) => (
+          <div key={m.name}>
+            <h4>{m.name}</h4>
+            <span>{m.title}</span>
+            <p>{m.bio}</p>
+          </div>
+        ))}
+      </div>
     </PageLayout>
   );
 }

@@ -20,31 +20,47 @@ export async function getHSEPolicies() {
         url
       }
     }
-  }`
+  }`;
   return await client.fetch(query);
 }
 
-// ✅ Add this:
+// ✅ Fetch Services
 export async function getServices() {
-  const query = `*[_type == "service"]{
+  return await client.fetch(`*[_type == "service"]{
+    _id,
     title,
     description,
-    body
-  }`
+    slug,
+    image
+  }`);
+}
+
+// ✅ Final version of getAbout
+export async function getAbout() {
+  const query = `*[_type == "about"][0]{
+    title,
+    subtitle,
+    heading,
+    body,
+    image,
+    teamMembers[] {
+      name,
+      title,
+      bio
+    }
+  }`;
   return await client.fetch(query);
 }
 
-export async function getAbout() {
-  return await client.fetch(`*[_type == "aboutPage"][0]{
+// ✅ Contact
+export async function getContact() {
+  const query = `*[_type == "contact"][0]{
     title,
     subtitle,
-    mainImage { asset->{url} },
-    content,
-    teamMembers[] {
-      name,
-      position,
-      bio,
-      photo { asset->{url} }
-    }
-  }`)
+    phones,
+    email,
+    location,
+    mapLink
+  }`;
+  return await client.fetch(query);
 }
