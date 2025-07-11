@@ -26,10 +26,43 @@ export async function getHSEPolicies() {
 
 // ✅ Add this:
 export async function getServices() {
-  const query = `*[_type == "service"]{
+  return await client.fetch(`*[_type == "service"]{
+    _id,
     title,
     description,
-    body
-  }`
+    slug,
+    image
+  }`);
+}
+
+export async function getAbout() {
+  const query = `*[_type == "about"][0]{
+    title,
+    subtitle,
+    heading,
+    body,
+    image,
+    teamMembers[] {
+      name,
+      title,
+      bio
+    }
+  }`;
+
   return await client.fetch(query);
 }
+
+
+export async function getContact() {
+  const query = `*[_type == "contact"][0]{
+    title,
+    subtitle,
+    phones,
+    email,
+    location,
+    mapLink
+  }`;
+  return await client.fetch(query);
+}
+
+
