@@ -1,6 +1,6 @@
 import PageLayout from "../../components/common/pageLayout/index.jsx";
 import { useEffect, useState, useRef } from "react";
-import { getContactPage } from "../../libs/sanityClient.js";
+import { getContact } from "../../libs/sanityClient.js";
 
 export default function Contact() {
   const [contactData, setContactData] = useState(null);
@@ -8,7 +8,7 @@ export default function Contact() {
   const messageRef = useRef(null);
 
   useEffect(() => {
-    getContactPage().then(setContactData);
+    getContact().then(setContactData);
   }, []);
 
   if (!contactData) return <div>Loading...</div>;

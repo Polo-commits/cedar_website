@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import PageLayout from "../../components/common/pageLayout/index.jsx";
 import { PortableText } from "@portabletext/react";
-import { getAboutPage, client } from "../../libs/sanityClient.js";
+import { getAbout, client } from "../../libs/sanityClient.js";
 import imageUrlBuilder from "@sanity/image-url";
 
 export default function About() {
   const [aboutData, setAboutData] = useState(null);
 
   useEffect(() => {
-    getAboutPage().then(setAboutData);
+    getAbout().then(setAboutData);
   }, []);
 
   const builder = imageUrlBuilder(client);
