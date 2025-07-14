@@ -25,7 +25,7 @@ export default function Services() {
           {services.map((service) => (
             <div className="col-md-3" key={service._id}>
               <div className="service-item">
-                {service.image && service.image.asset && (
+                {service.image?.asset?.url && (
                   <img src={service.image.asset.url} alt={service.title} />
                 )}
                 <div className="down-content">

@@ -37,5 +37,12 @@ export default defineType({
       title: 'Body Content',
       type: 'blockContent',
     }),
+    // ✅ NEW: display order
+    defineField({
+      name: 'order',
+      title: 'Display Order',
+      type: 'number',
+      description: 'Lower numbers appear first',
+    }),
   ],
-})
+});
