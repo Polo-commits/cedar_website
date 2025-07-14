@@ -26,12 +26,15 @@ export async function getHSEPolicies() {
 
 // ✅ Fetch Services
 export async function getServices() {
-  return await client.fetch(`*[_type == "service"]{
+  return await client.fetch(`*[_type == "service"] | order(order asc) {
     _id,
     title,
     description,
     slug,
-    image
+    image,
+    icon,
+    body,
+    order
   }`);
 }
 
