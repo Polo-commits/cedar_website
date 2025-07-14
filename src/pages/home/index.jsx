@@ -18,24 +18,23 @@ export default function HomePage() {
       title,
       subtitle,
       heroImage {
-        asset->{
-          url
-        }
+        asset->{ url }
       },
-      buttonText
+      buttonText,
+      introText
     }`)
     .then((data) => setHomeData(data))
     .catch(console.error);
   }, []);
 
-  if (!homeData) return <div>Loading...</div>; // Show loading state
+  if (!homeData) return <div>Loading...</div>;
 
   return (
     <PageLayout>
       <Banner data={homeData} />
+      <MoreInfo introText={homeData.introText} />
       <Services />
       <FunFacts />
-      <MoreInfo />
       <CallbackForm />
       <Testimonials />
       <RequestForm />

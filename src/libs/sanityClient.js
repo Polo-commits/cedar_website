@@ -42,7 +42,9 @@ export async function getAbout() {
     subtitle,
     heading,
     body,
-    image,
+    image {
+      asset->{ url }
+    },
     teamMembers[] {
       name,
       title,
