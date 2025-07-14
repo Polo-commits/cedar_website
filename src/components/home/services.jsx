@@ -25,9 +25,12 @@ export default function Services() {
           {services.map((service) => (
             <div className="col-md-3" key={service._id}>
               <div className="service-item">
-                {service.image?.asset?.url && (
-                  <img src={service.image.asset.url} alt={service.title} />
-                )}
+                {service.image?.asset?.url ? (
+  <img src={service.image.asset.url} alt={service.title} />
+) : (
+  <p>No image available</p>
+)}
+
                 <div className="down-content">
                   <h4>{service.title}</h4>
                   <p>{service.description}</p>
