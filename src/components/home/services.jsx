@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getServices } from "../../libs/sanityClient.js";
+import imageUrlBuilder from "@sanity/image-url";
+import { client, getServices } from "../../libs/sanityClient.js";
 
 export default function Services() {
   const [services, setServices] = useState([]);
@@ -8,6 +9,11 @@ export default function Services() {
   useEffect(() => {
     getServices().then(setServices);
   }, []);
+
+  const builder = imageUrlBuilder(client);
+  function urlFor(source) {
+    return builder.image(source);
+  }
 
   return (
     <div className="services">
@@ -25,12 +31,11 @@ export default function Services() {
           {services.map((service) => (
             <div className="col-md-3" key={service._id}>
               <div className="service-item">
-                {service.image?.asset?.url ? (
-  <img src={service.image.asset.url} alt={service.title} />
-) : (
-  <p>No image available</p>
-)}
-
+                {service.icon?.asset?.url ? (
+                  <img src={service.icon.asset.url} alt={service.title} />
+                ) : (
+                  <p>No image available</p>
+                )}
                 <div className="down-content">
                   <h4>{service.title}</h4>
                   <p>{service.description}</p>

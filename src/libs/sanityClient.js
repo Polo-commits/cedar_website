@@ -31,7 +31,7 @@ export async function getServices() {
     title,
     description,
     slug,
-    image { asset->{ url } },
+    icon { asset->{ url } },
     body,
     order
   }`);
