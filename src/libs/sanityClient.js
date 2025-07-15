@@ -68,3 +68,17 @@ export async function getContact() {
   }`;
   return await client.fetch(query);
 }
+
+// ✅ GalleryProject
+export async function getGallery() {
+  return await client.fetch(`*[_type == "galleryProject"] | order(_createdAt desc) {
+    title,
+    category,
+    description,
+    images[] {
+      asset->{ url },
+      caption
+    }
+  }`);
+}
+

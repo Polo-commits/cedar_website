@@ -7,6 +7,7 @@ import hsePolicies from './hsePolicies'
 import service from './service'
 import about from './about.js'
 import contact from './contact.js'
+import galleryProject from './galleryProject'
 
 export const schemaTypes = [
   post,
@@ -17,5 +18,7 @@ export const schemaTypes = [
   hsePolicies,
   service,
   about,
-  contact
+  contact,
+  galleryProject   // 👈 new
 ]
+
