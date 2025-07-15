@@ -12,10 +12,10 @@ export default function Banner() {
         title,
         subtitle,
         buttonText,
-        heroImage{
-          asset->{
-            url
-          }
+        heroSubtext,
+        callToActionLink,
+        heroImage {
+          asset->{ url }
         }
       }`)
       .then((response) => setData(response))
@@ -53,8 +53,8 @@ export default function Banner() {
             <div className="text-content">
               <h6>{data.subtitle}</h6>
               <h4>{data.title}</h4>
-              <p>{/* Description field if needed */}</p>
-              <Link to="/services" className="filled-button">
+              {data.heroSubtext && <p>{data.heroSubtext}</p>}
+              <Link to={data.callToActionLink || "/services"} className="filled-button">
                 {data.buttonText}
               </Link>
             </div>

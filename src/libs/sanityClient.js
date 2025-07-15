@@ -82,4 +82,9 @@ export async function getGallery() {
   }`);
 }
 
-
+// ✅ Leadership
+export async function getLeadership() {
+  return await client.fetch(`*[_type == "leadershipMember"] | order(_createdAt asc) {
+    name, title, bio, photo { asset->{ url } }
+  }`);
+}

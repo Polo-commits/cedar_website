@@ -15,18 +15,13 @@ export default defineType({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
+      options: { source: 'title', maxLength: 96 },
     }),
     defineField({
       name: 'heroImage',
       title: 'Hero Image',
       type: 'image',
-      options: {
-        hotspot: true,
-      },
+      options: { hotspot: true },
     }),
     defineField({
       name: 'heroHeadline',
@@ -49,10 +44,53 @@ export default defineType({
       type: 'url',
     }),
     defineField({
+      name: 'introImage',
+      title: 'Intro Image',
+      type: 'image',
+      options: { hotspot: true },
+    }),
+    defineField({
       name: 'introText',
       title: 'Intro Text',
       type: 'blockContent',
     }),
+
+    // ✅ WHO WE ARE
+    defineField({
+      name: 'whoWeAreTitle',
+      title: 'Who We Are Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'whoWeAreBody',
+      title: 'Who We Are Body',
+      type: 'blockContent',
+    }),
+    defineField({
+      name: 'whoWeAreImage',
+      title: 'Who We Are Image',
+      type: 'image',
+      options: { hotspot: true },
+    }),
+
+    // ✅ MISSION / VISION / VALUES
+    defineField({
+      name: 'mission',
+      title: 'Mission',
+      type: 'blockContent',
+    }),
+    defineField({
+      name: 'vision',
+      title: 'Vision',
+      type: 'blockContent',
+    }),
+    defineField({
+      name: 'values',
+      title: 'Values',
+      type: 'blockContent',
+    }),
+
+    // ✅ SEO
     defineField({
       name: 'seoTitle',
       title: 'SEO Title',

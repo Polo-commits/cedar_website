@@ -8,6 +8,8 @@ import service from './service'
 import about from './about.js'
 import contact from './contact.js'
 import galleryProject from './galleryProject'
+import leadershipMember from './leadershipMember';
+
 
 export const schemaTypes = [
   post,
@@ -19,6 +21,7 @@ export const schemaTypes = [
   service,
   about,
   contact,
-  galleryProject   // 👈 new
+  galleryProject,
+  leadershipMember,   // 👈 new   
 ]
 
