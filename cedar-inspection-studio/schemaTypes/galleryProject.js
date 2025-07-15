@@ -31,7 +31,24 @@ export default {
       name: 'images',
       title: 'Project Images',
       type: 'array',
-      of: [{ type: 'image', options: { hotspot: true } }],
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'image',
+              title: 'Image',
+              type: 'image',
+              options: { hotspot: true },
+            },
+            {
+              name: 'caption',
+              title: 'Caption',
+              type: 'string',
+            },
+          ],
+        },
+      ],
     },
   ],
 };

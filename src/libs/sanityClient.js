@@ -76,9 +76,10 @@ export async function getGallery() {
     category,
     description,
     images[] {
-      asset->{ url },
+      image { asset->{ url } },
       caption
     }
   }`);
 }
+
 

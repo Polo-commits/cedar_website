@@ -23,21 +23,25 @@ export default function GalleryPage() {
             <p>{project.description}</p>
 
             <div className="gallery-grid">
-              {project.images.map((img, idx) => (
+              {project.images.map((imgObj, idx) => (
                 <div
                   key={idx}
                   className="gallery-item"
                   onClick={() =>
                     setLightbox({
                       open: true,
-                      src: img.asset.url,
-                      caption: img.caption || img.description || ''
+                      src: imgObj.image.asset.url,
+                      caption: imgObj.caption || ''
                     })
                   }
                 >
-                  <img src={img.asset.url} alt={project.title} loading="lazy" />
-                  {img.caption && (
-                    <div className="caption">{img.caption}</div>
+                  <img
+                    src={imgObj.image.asset.url}
+                    alt={imgObj.caption || project.title}
+                    loading="lazy"
+                  />
+                  {imgObj.caption && (
+                    <div className="caption">{imgObj.caption}</div>
                   )}
                 </div>
               ))}
