@@ -8,7 +8,8 @@ import service from './service'
 import about from './about.js'
 import contact from './contact.js'
 import galleryProject from './galleryProject'
-import leadershipMember from './leadershipMember';
+import leadershipMember from './leadershipMember'
+import footer from './footer';
 
 
 export const schemaTypes = [
@@ -22,6 +23,7 @@ export const schemaTypes = [
   about,
   contact,
   galleryProject,
-  leadershipMember,   // 👈 new   
+  leadershipMember,    
+  footer,  // 👈 new
 ]
 

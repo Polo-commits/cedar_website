@@ -88,3 +88,17 @@ export async function getLeadership() {
     name, title, bio, photo { asset->{ url } }
   }`);
 }
+
+// ✅ Footer
+export async function getFooter() {
+  return await client.fetch(`*[_type == "footer"][0]{
+    description,
+    socialLinks,
+    services,
+    languages,
+    additionalPages,
+    location,
+    phones,
+    email
+  }`);
+}
