@@ -1,7 +1,7 @@
 import Logo from "../../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getFooter } from "../../libs/sanityClient";
+import { getFooter } from "../../../libs/sanityClient";
 
 export default function Footer() {
   const [footerData, setFooterData] = useState(null);
