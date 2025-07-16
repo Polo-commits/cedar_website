@@ -8,11 +8,11 @@ export default function Footer() {
 
   useEffect(() => {
     getFooter().then(setFooterData).catch(console.error);
+    // If you *really* want to scroll top:
+    // window.scrollTo(0, 0);
   }, []);
 
   if (!footerData) return null;
-
-  window.scrollTo(0, 0);
 
   return (
     <>
@@ -25,13 +25,15 @@ export default function Footer() {
               <img src={Logo} alt="" className="logo-image" />
               <p>{footerData.description}</p>
               <ul className="social-icons">
-                {footerData.socialLinks?.map((link, i) => (
-                  <li key={i}>
-                    <a href={link.url} target="_blank" rel="noreferrer">
-                      <i className={`fa ${link.icon}`}></i>
-                    </a>
-                  </li>
-                ))}
+                {footerData.socialLinks?.map((link, i) =>
+                  link?.url && link?.icon ? (
+                    <li key={i}>
+                      <a href={link.url} target="_blank" rel="noreferrer">
+                        <i className={`fa ${link.icon}`}></i>
+                      </a>
+                    </li>
+                  ) : null
+                )}
               </ul>
             </div>
 
@@ -54,11 +56,13 @@ export default function Footer() {
             <div className="col-md-3 footer-item">
               <h4>Additional Pages</h4>
               <ul className="menu-list">
-                {footerData.additionalPages?.map((page, i) => (
-                  <li key={i}>
-                    <Link to={`/${page.slug.current}`}>{page.title}</Link>
-                  </li>
-                ))}
+                {footerData.additionalPages?.map((page, i) =>
+                  page?.slug?.current ? (
+                    <li key={i}>
+                      <Link to={`/${page.slug.current}`}>{page.title}</Link>
+                    </li>
+                  ) : null
+                )}
               </ul>
             </div>
 
@@ -73,12 +77,14 @@ export default function Footer() {
                 <li>
                   <span>Mobile Numbers:</span><br />
                   {footerData.phones?.map((phone, i) => (
-                    <div key={i}><a>{phone}</a></div>
+                    <div key={i}>
+                      <a href={`tel:${phone}`}>{phone}</a>
+                    </div>
                   ))}
                 </li>
                 <li>
                   <span>Email Address:</span><br />
-                  <a>{footerData.email}</a>
+                  <a href={`mailto:${footerData.email}`}>{footerData.email}</a>
                 </li>
               </ul>
             </div>
@@ -86,6 +92,7 @@ export default function Footer() {
           </div>
         </div>
       </footer>
+
       <div className="sub-footer">
         <div className="container">
           <div className="row">
