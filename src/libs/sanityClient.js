@@ -7,6 +7,24 @@ export const client = createClient({
   useCdn: true,
 });
 
+// ✅ Homepage Query
+export async function getHomepage() {
+  const query = `*[_type == "homepage"][0]{
+    title,
+    heroHeadline,
+    heroSubtext,
+    callToActionText,
+    callToActionLink,
+    heroImage {
+      asset->{ url }
+    },
+    mission,
+    vision,
+    values
+  }`;
+  return await client.fetch(query);
+}
+
 // Fetch HSE Policies
 export async function getHSEPolicies() {
   const query = `*[_type == "hsePolicies"][0]{

@@ -54,4 +54,4 @@ website/
 
 ## License
 
-[MIT](LICENSE) © Faisal Issaka
+[MIT](LICENSE) © Polo_Commits
