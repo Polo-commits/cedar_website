@@ -8,15 +8,15 @@ export default function FunFacts({ visionTitle, visionBody, missionTitle, missio
           <div className="col-md-6">
             <div className="left-content">
               <h2>{visionTitle || 'Our Vision'}</h2>
-              <PortableText value={visionBody} />
+              {visionBody && <PortableText value={visionBody} />}
 
               <h2>{missionTitle || 'Our Mission'}</h2>
-              <PortableText value={missionBody} />
+              {missionBody && <PortableText value={missionBody} />}
             </div>
           </div>
           <div className="col-md-6 align-self-center">
             <h2>{valuesTitle || 'Our Values'}</h2>
-            <PortableText value={valuesBody} />
+            {valuesBody && <PortableText value={valuesBody} />}
           </div>
         </div>
       </div>
