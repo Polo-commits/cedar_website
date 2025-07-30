@@ -38,6 +38,8 @@ export default function Banner() {
     nextArrow: <NextArrow />,
   };
 
+  const bannerImage = data.heroImage?.asset?.url || "";
+
   return (
     <div className="main-banner header-text" id="top">
       <Slider {...settings} className="Modern-Slider">
@@ -45,7 +47,7 @@ export default function Banner() {
           <div
             className="img-fill"
             style={{
-              backgroundImage: `url(${data.heroImage.asset.url})`,
+              backgroundImage: `url(${bannerImage})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -55,7 +57,7 @@ export default function Banner() {
               <h4>{data.title}</h4>
               {data.heroSubtext && <p>{data.heroSubtext}</p>}
               <Link to={data.callToActionLink || "/services"} className="filled-button">
-                {data.buttonText}
+                {data.buttonText || "Explore Services"}
               </Link>
             </div>
           </div>
