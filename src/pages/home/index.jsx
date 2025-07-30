@@ -44,17 +44,20 @@ export default function HomePage() {
       <MoreInfo 
         title={homeData.whoWeAreTitle}
         body={homeData.whoWeAreBody}
-        image={homeData.whoWeAreImage?.asset?.url || ""}
-
+        image={
+          (homeData.whoWeAreImage && homeData.whoWeAreImage.asset)
+            ? homeData.whoWeAreImage.asset.url
+            : ""
+        }
       />
 
       <Services />
 
       <FunFacts
-  mission={homeData.mission}
-  vision={homeData.vision}
-  values={homeData.values}
-/>
+        mission={homeData.mission}
+        vision={homeData.vision}
+        values={homeData.values}
+      />
 
       <CallbackForm />
       <Testimonials />
