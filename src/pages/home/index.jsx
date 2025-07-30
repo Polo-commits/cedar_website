@@ -47,7 +47,8 @@ export default function HomePage() {
       <MoreInfo 
         title={homeData.whoWeAreTitle}
         body={homeData.whoWeAreBody}
-        image={homeData.whoWeAreImage?.asset?.url}
+        image={homeData.whoWeAreImage?.asset?.url || ""}
+
       />
 
       <Services />
