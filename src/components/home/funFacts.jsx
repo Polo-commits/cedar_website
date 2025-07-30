@@ -5,7 +5,6 @@ export default function FunFacts({ mission, vision, values }) {
     <div className="fun-facts">
       <div className="container">
         <div className="row">
-          {/* Vision & Mission */}
           <div className="col-md-6">
             <div className="left-content">
               <h2>Our Vision</h2>
@@ -15,8 +14,6 @@ export default function FunFacts({ mission, vision, values }) {
               {mission && <PortableText value={mission} />}
             </div>
           </div>
-
-          {/* Values */}
           <div className="col-md-6 align-self-center">
             <h2>Our Values</h2>
             {values && <PortableText value={values} />}
