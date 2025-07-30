@@ -25,12 +25,9 @@ export default function HomePage() {
       whoWeAreTitle,
       whoWeAreBody,
       whoWeAreImage { asset->{ url } },
-      missionTitle,
-      missionBody,
-      visionTitle,
-      visionBody,
-      valuesTitle,
-      valuesBody,
+      mission,
+      vision,
+      values,
       seoTitle,
       seoDescription
     }`)
@@ -54,12 +51,9 @@ export default function HomePage() {
       <Services />
 
       <FunFacts
-  visionTitle={homeData.visionTitle}
-  visionBody={homeData.visionBody}
-  missionTitle={homeData.missionTitle}
-  missionBody={homeData.missionBody}
-  valuesTitle={homeData.valuesTitle}
-  valuesBody={homeData.valuesBody}
+  mission={homeData.mission}
+  vision={homeData.vision}
+  values={homeData.values}
 />
 
       <CallbackForm />
